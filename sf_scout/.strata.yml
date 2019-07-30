@@ -1,0 +1,15 @@
+pipeline_template: docker/Jenkinsfile-1
+email_reply_to: pmatharoo@salesforce.com     # Change this to your group's e-mail address!
+time_out_mins: 5                                # (Optional default shown
+compliance_required: false                         # (Optional) default shown
+docker_test_images:                                 # The image(s) that will be used to run your unit tests (Unit tests will be run against each image)
+    - dva/sfdc_centos7
+unit_tests_command: /bin/true                       # The command we'll run for the unit tests stage
+# unit_tests_mount_point: /tmp/project              # (Optional) default shown
+# integration_test_git_repo_path: <itest-git-repo>    # (Optional) Don't add this if the itest repo is same as the current git repo
+# integration_tests_command: ./my-docker-integration-tests.sh   # (Optional) Only needed if you want to run a different command then docker-compose. Must have the word 'docker if you want to override docker-compose.
+docker_images:                                      # Provide a map of image names to custom Dockerfile, will ignore building/publishing the default Dockerfile in the root directory
+   sfscout: ./Dockerfile
+# publish_jar: false                                # (Optional) If this is set to true then we'll run mvn
+# production_branch: master                         # (Optional) default shown
+# random comment

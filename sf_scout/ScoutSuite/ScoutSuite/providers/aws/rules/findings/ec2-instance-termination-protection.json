@@ -1,0 +1,9 @@
+{
+    "description": "EC2 Instance Termination Protection",
+    "rationale": "Any EC2 instance outside of the Auto Scaling Group should be protected against accidental termination.",
+    "path": "ec2.regions.id.vpcs.id.instances.id.api_termination",
+    "dashboard_name": "Instances",
+    "conditions": [ "and",
+        [ "this", "false", ""]
+    ]
+}

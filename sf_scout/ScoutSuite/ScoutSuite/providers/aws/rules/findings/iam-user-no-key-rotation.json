@@ -1,0 +1,13 @@
+{
+    "arg_names": [ "Key status", "Rotation period" ],
+    "description": "Lack of key rotation (_ARG_0_)",
+    "rationale": "In case of access key compromise, the lack of credential rotation increases the period during which an attacker has access to the AWS account. Salesforce policy dictats that keys must be rotated every 90 days. More info: https://confluence.internal.salesforce.com/display/SECURITY/SFSS-021+Public+Cloud+Security+Standard#SFSS-021PublicCloudSecurityStandard-1.AuthenticationandIdentityManagement",
+    "key": "iam-user-no-_ARG_0_-key-rotation.json",
+    "path": "iam.users.id.AccessKeys.id",
+    "dashboard_name": "Access keys",
+    "display_path": "iam.users.id",
+    "conditions": [ "and",
+        [ "iam.users.id.AccessKeys.id.Status", "equal", "_ARG_0_" ],
+        [ "iam.users.id.AccessKeys.id.CreateDate", "olderThan", ["_ARG_1_", "days"] ]
+    ]
+}

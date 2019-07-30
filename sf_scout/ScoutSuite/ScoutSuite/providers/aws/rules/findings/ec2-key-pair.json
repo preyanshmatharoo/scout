@@ -1,0 +1,9 @@
+{
+    "description": "Unused EC2 key pairs",
+    "rationale": "Any unused keys can lead to unapproved SSH access. Any key pair that is unlinked with EC2 instances is considered as unused.",
+    "path": "ec2.regions.id.vpcs.id.key_pairs",
+    "dashboard_name": "Key pair",
+    "conditions": [ "and",
+        [ "KeyName", "equals", "TestKeyPair"]
+    ]
+}

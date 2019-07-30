@@ -1,0 +1,61 @@
+{
+    "about": "SFDC optimized ScoutSuite AWS Ruleset.",
+    "rules": {
+        "ec2-instance-types.json": [
+            {
+                "args": [
+                    "beefy",
+                    "g3.4xlarge,g3.8xlarge,g3.16xlarge"
+                ],
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-instance-type.json": [
+            {
+                "args": [
+                    "t2.micro"
+                ],
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-instance-age.json": [
+            {
+                "args": [
+                    "10"
+                ],
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-instance-termination-protection.json": [
+            {
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-snapshot-encryption.json": [
+            {
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-ebs-unused-volume.json": [
+            {
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
+        "ec2-recent-volume-snapshot.json": [
+            {
+                "args": [
+                    "5",
+                    "hours"
+                ],
+                "enabled": true,
+                "level": "warning"
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "description": "Unused EBS volume",
+	"rationale": "Any orphaned Elastic Block Store volumes should be removed as it helps in reducing the charges and the possibility of access to any sensitive data available on these volumes.",
+    "path": "ec2.regions.id.volumes.id",
+    "dashboard_name": "Volumes",
+    "conditions": [ "and",
+        [ "State", "equal", "available" ]
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "description": "AWS EBS Snapshot Age (Recent Snapshot)",
+    "rationale": "EBS volume snapshots should be refreshed (taken at a regular interval - _ARG_0_ _ARG_1_) for a more reliable recovery and backup strategy.",
+    "path": "ec2.regions.id.snapshots.id",
+    "dashboard_name": "Instances",
+    "conditions": [ "and",
+        [ "StartTime", "olderThan", ["_ARG_0_", "_ARG_1_"] ]
+    ],
+    "arg_names": [
+        "Numeric value of age",
+        "days/hours/minutes/seconds"
+    ]
+}

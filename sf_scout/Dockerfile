@@ -25,13 +25,13 @@ COPY ScoutSuite /ScoutSuite
 
 RUN pip3 install -r /ScoutSuite/requirements.txt
 
-RUN adduser -S scoutuser
+#RUN adduser -S scoutuser
 #USER scoutuser
 
-RUN mkdir /home/scoutuser/sf_scout /home/scoutuser/.aws /home/scoutuser/sf_scout/report
-RUN chown scoutuser /home/scoutuser/sf_scout /home/scoutuser/.aws /home/scoutuser/sf_scout/report
+RUN mkdir /home/scoutuser /home/scoutuser/sf_scout /root/.aws /home/scoutuser/sf_scout/report
+#RUN chown scoutuser /home/scoutuser/sf_scout /home/scoutuser/sf_scout/.aws /home/scoutuser/sf_scout/report
 
-USER scoutuser
+#USER scoutuser
 
 COPY sf_scout.py /home/scoutuser/sf_scout
 

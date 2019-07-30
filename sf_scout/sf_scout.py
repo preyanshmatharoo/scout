@@ -56,7 +56,7 @@ def parse_args():
 # Create the .aws/credentials file
 def write_credentials(access_key_id, access_key, session_token, profile):
 
-    creds = open("/home/scoutuser/.aws/credentials","w+")
+    creds = open("/root/.aws/credentials","w+")
 
     creds.write("["+profile+"]\n")
 
@@ -70,7 +70,7 @@ def write_credentials(access_key_id, access_key, session_token, profile):
     creds.close()
 
 def resource_teardown():
-    os.remove("/home/scoutuser/.aws/credentials")
+    os.remove("/root/.aws/credentials")
     if os.path.exists("temp.json"):
         os.remove("temp.json")
 

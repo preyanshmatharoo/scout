@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-   scout-compose:
-      image: psmatharoo/sfscout:v3.3
+   sf_scout:
+      image: psmatharoo/sfscout:v3.6
       container_name: scout
       command: sh -c "python3 sf_scout.py --id=${ID} --key=${KEY} --token=${TOKEN} --rule=${RULE} --acc-id=${ACC} --sa=${SA} --out=${OUTPUT}"
       volumes:
